@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Allstate Small Claims Application</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Allstate Claims</h1>
+        <section class="navigations">
+            <button onclick="newClaim" id="newClaimBtn">New Claim</button>
+            <button onclick="searchClamis" id="searchClaimsBtn">Search</button>
+        </section>
+        <form action="database.html" method="POST">
+            <label for="customerFirstName">First Name</label>
+            <input type="text" name="customerFirstName" id="customerFirstName" required>
+
+            <label for="customerLastName">Last name</label>
+            <input type="text" name="customerLastName" id="customerLastName" required>
+
+            <label for="customerPhoneNumber">Phone Number</label>
+            <input type="tel" name="customerPhoneNumber" id="customerPhoneNumber">
+
+            <label for="claimdate">Claim Date</label>
+            <input type="date" name="claimdate" id="claimDate">
+
+            <label for="costOfClaim">Estimate Cost of Claim</label>
+            <input type="number" name="costOfClaim" id="costOfClaim">
+
+            <label for="claimDetails">Claim Date</label>
+            <input type="text" name="claimdetails" id="claimdetails">
+        <form/>
+    </div>
+
+</body>
+
+</html>

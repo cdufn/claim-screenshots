@@ -1,0 +1,34 @@
+body {
+    background: #0033a0;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-style:solid;
+    padding: 20px;
+}
+
+.customerDetails {
+    border-style:groove;
+}
+
+form label {
+    color: #00f;
+    width: 300px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+input, select {
+    margin-bottom: 10px;
+    display: block;
+}
