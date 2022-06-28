@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -19,23 +20,102 @@
         </section>
         <form action="database.html" method="POST">
             <label for="customerFirstName">First Name</label>
-            <input type="text" name="customerFirstName" id="customerFirstName" required>
+            <input type="text" name="customerFirstName" id="customerFirstName" placeholder="First Name" required>
 
             <label for="customerLastName">Last name</label>
-            <input type="text" name="customerLastName" id="customerLastName" required>
+            <input type="text" name="customerLastName" id="customerLastName" placeholder="Last Name" required>
 
             <label for="customerPhoneNumber">Phone Number</label>
-            <input type="tel" name="customerPhoneNumber" id="customerPhoneNumber">
+            <input type="tel" name="customerPhoneNumber" id="customerPhoneNumber" required>
 
             <label for="claimdate">Claim Date</label>
-            <input type="date" name="claimdate" id="claimDate">
+            <input type="date" name="claimdate" id="claimDate" required>
 
             <label for="costOfClaim">Estimate Cost of Claim</label>
-            <input type="number" name="costOfClaim" id="costOfClaim">
+            <input type="number" name="costOfClaim" id="costOfClaim" required>
 
-            <label for="claimDetails">Claim Date</label>
-            <input type="text" name="claimdetails" id="claimdetails">
-        <form/>
+            <label for="claimReason">Reason for Claim</label>
+            <input type="text" name="claimReason" id="claimReason" required>
+
+            <label for="claimDescription">Description of Incident</label>
+            <textarea id="claimDescription" name="claimDescription" rows="4" cols="50"></textarea>
+
+            <h2>Type of Insurance</h2>
+
+            <input type="checkbox" onclick="togglehouseholdExtended" name="property" id="property">
+            <label class="checkbox-label" for="property">Property</label>
+
+            <input type="checkbox" name="motor" id="motor">
+            <label class="checkbox-label" for="motor">Motor</label>
+
+            <input type="checkbox" name="pet" id="pet">
+            <label class="checkbox-label" for="pet">Pet</label>
+
+            <div id="householdExtended" style="display: none;">
+
+                <label for="address">Address of Property Affected</label>
+                <input type="text" name="address" id="address">
+
+            </div>
+
+            <div id="motorExtended" style="display: none;">
+
+                <label for="make">Make of Vehicle</label>
+                <input type="text" name="make" id="make">
+
+                <label for="model">Model of Vehicle</label>
+                <input type="text" name="model" id="model">
+
+                <label for="year">Year of Manufacture</label>
+                <input type="text" name="year" id="year">
+
+            </div>
+
+            <div id="petExtended" style="display: none;">
+
+                <label for="type">Type of Animal</label>
+                <input type="text" name="type" id="type">
+
+                <label for="breed">Breed</label>
+                <input type="text" name="breed" id="breed">
+            </div>
+
+            <script>
+                const targetDivMotor = document.getElementById("motorExtended");
+                const checkbxMotor = document.getElementById("motor");
+                checkbxMotor.onclick = function () {
+                    if (targetDivMotor.style.display !== "none") {
+                        targetDivMotor.style.display = "none";
+                    }
+                    else {
+                        targetDivMotor.style.display = "block";
+                    }
+                }
+
+                const targetDivHousehold = document.getElementById("householdExtended");
+                const checkbxHousehold = document.getElementById("property");
+                checkbxHousehold.onclick = function () {
+                    if (targetDivHousehold.style.display !== "none") {
+                        targetDivHousehold.style.display = "none";
+                    }
+                    else {
+                        targetDivHousehold.style.display = "block";
+                    }
+                }
+
+                const targetDivPet = document.getElementById("petExtended");
+                const checkbxPet = document.getElementById("pet");
+                checkbxPet.onclick = function () {
+                    if (targetDivPet.style.display !== "none") {
+                        targetDivPet.style.display = "none";
+                    }
+                    else {
+                        targetDivPet.style.display = "block";
+                    }
+                }
+            </script>
+
+            <form />
     </div>
 
 </body>
