@@ -7,13 +7,28 @@ h1 {
     text-align: center;
 }
 
-.container {
+.header {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
     background: #fff;
     border-style:solid;
     padding: 20px;
+}
+
+.navigations button{
+    font-size: 20px;
+}
+
+.container{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-style:solid;
+    border-top: 0;;
+    padding: 20px;
+
 }
 
 .customerDetails {
@@ -26,6 +41,10 @@ form label {
     display: block;
     float: left;
     margin-right: 10px;
+}
+
+form.claimStatus {
+    visibility: hidden;
 }
 
 input, select {
@@ -41,4 +60,20 @@ form label.checkbox-label {
 
 input[type="checkbox"] {
     display: inline-block;
+}
+
+footer a{
+    text-align: center;
+    color: #fff;
+   display: block;
+}
+
+td, th {
+    border: 1px solid #000;    
+}
+
+.searchBox {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.2em;
 }

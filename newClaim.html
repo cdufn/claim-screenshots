@@ -12,13 +12,25 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Allstate Claims</h1>
-        <section class="navigations">
-            <button onclick="newClaim" id="newClaimBtn">New Claim</button>
-            <button onclick="searchClamis" id="searchClaimsBtn">Search</button>
-        </section>
-        <form action="database.html" method="POST">
+
+    <header class="header">
+        <img src="allstatelogo.png" alt="Allstate Image Logo">
+
+    </header>
+    <section class="container">
+        <h1>Allstate Claims System</h1>
+        <nav class="navigations">
+            <p>Welcomes to the Allstate Small Claims Sytem. Please make the relevant selection and input the required
+                information</p>
+            <button onclick="newClaim()" id="newClaimBtn" type="button">New Claim</button>
+            <a href="searchClaims.html">
+                <button>Search Existing Claims</button>
+            </a>
+        </nav>
+
+        <br>
+
+        <form id="newClaimForm" action="database.html" method="POST">
             <label for="customerFirstName">First Name</label>
             <input type="text" name="customerFirstName" id="customerFirstName" placeholder="First Name" required>
 
@@ -40,7 +52,9 @@
             <label for="claimDescription">Description of Incident</label>
             <textarea id="claimDescription" name="claimDescription" rows="4" cols="50"></textarea>
 
-            <h2>Type of Insurance</h2>
+            <input type="number" name="claimStatus" id="claimStatus" value="1" style="display: none;">
+
+            <h2>Type of Insurance Claim</h2>
 
             <input type="checkbox" onclick="togglehouseholdExtended" name="property" id="property">
             <label class="checkbox-label" for="property">Property</label>
@@ -52,71 +66,64 @@
             <label class="checkbox-label" for="pet">Pet</label>
 
             <div id="householdExtended" style="display: none;">
+                <label for="address">Address of Property</label>
 
-                <label for="address">Address of Property Affected</label>
-                <input type="text" name="address" id="address">
+                <br>
+
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" required>
+
+                <label for="street">Street</label>
+                <input type="text" name="street" id="street" required>
+
+                <label for="zip">Zip Code</label>
+                <input type="text" name="zip" id="zip" required>
 
             </div>
 
             <div id="motorExtended" style="display: none;">
 
                 <label for="make">Make of Vehicle</label>
-                <input type="text" name="make" id="make">
+                <input type="text" name="make" id="make" required>
 
                 <label for="model">Model of Vehicle</label>
-                <input type="text" name="model" id="model">
+                <input type="text" name="model" id="model" required>
 
                 <label for="year">Year of Manufacture</label>
-                <input type="text" name="year" id="year">
+                <input type="text" name="year" id="year" required>
 
             </div>
 
             <div id="petExtended" style="display: none;">
 
                 <label for="type">Type of Animal</label>
-                <input type="text" name="type" id="type">
+                <input type="text" name="type" id="type" required>
 
                 <label for="breed">Breed</label>
-                <input type="text" name="breed" id="breed">
+                <input type="text" name="breed" id="breed" required>
             </div>
 
-            <script>
-                const targetDivMotor = document.getElementById("motorExtended");
-                const checkbxMotor = document.getElementById("motor");
-                checkbxMotor.onclick = function () {
-                    if (targetDivMotor.style.display !== "none") {
-                        targetDivMotor.style.display = "none";
-                    }
-                    else {
-                        targetDivMotor.style.display = "block";
-                    }
-                }
+            <br>
 
-                const targetDivHousehold = document.getElementById("householdExtended");
-                const checkbxHousehold = document.getElementById("property");
-                checkbxHousehold.onclick = function () {
-                    if (targetDivHousehold.style.display !== "none") {
-                        targetDivHousehold.style.display = "none";
-                    }
-                    else {
-                        targetDivHousehold.style.display = "block";
-                    }
-                }
+            <div id="additionalInfo" style="display: none;">
 
-                const targetDivPet = document.getElementById("petExtended");
-                const checkbxPet = document.getElementById("pet");
-                checkbxPet.onclick = function () {
-                    if (targetDivPet.style.display !== "none") {
-                        targetDivPet.style.display = "none";
-                    }
-                    else {
-                        targetDivPet.style.display = "block";
-                    }
-                }
+                <label for="type">Date of related incident</label>
+                <input type="date" name="additionalDate" id="additionalDate" required>
+
+                <label for="additionalInfoText">Description of Incident</label>
+                <textarea id="additionalInfoText" name="additionalInfoText" rows="4" cols="50"></textarea>
+
+            </div>
+
+            <script scr="script.js">
             </script>
 
             <form />
-    </div>
+    </section>
+
+    <footer>
+        <a href="mailto:AllstateClaims@allstate.com">AllstateClaims@allstate.com</a>
+    </footer>
 
 </body>
 

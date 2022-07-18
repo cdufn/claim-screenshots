@@ -1,0 +1,62 @@
+import axios from "axios";
+
+export const getAllPayments = () => {
+    return [
+        { claim_id: 1, policy_number: 987563254, first_name: "John", last_name: "Doh", claim_type: "Property", claim_status: "New" },
+ 	{ claim_id: 2, policy_number: 987563255, first_name: "James", last_name: "Storey", claim_type: "Auto", claim_status: "New" },
+	{ claim_id: 3, policy_number: 987563256, first_name: "Paul", last_name: "Doherty", claim_type: "Pet", claim_status: "New" } 
+    ]
+}
+
+export const getAllPaymentsRestVersion = () => {
+    const headers = new Headers({ 'Accept': 'application/json' });
+
+    const paymentsPromise = fetch("http://localhost:8080/api/payment/",
+        { method: "GET", headers: headers });
+        
+    return paymentsPromise;
+}
+
+export const getAllPaymentsAxiosVersion = () => {
+    
+    const paymentsPromise = axios({ url :"http://localhost:8080/api/payment/",
+         method: "GET", headers: { 'Accept': 'application/json' } });
+        
+    return paymentsPromise;
+}
+
+
+export const getAllPaymentsRestExample = () => {
+    //GET  http://localhost:8080/api/payment
+
+
+    const headers = new Headers({ 'Accept': 'application/json' });
+
+    const paymentsPromise = fetch("http://localhost:8080/api/payment/",
+        { method: "GET", headers: headers });
+
+    paymentsPromise.then(
+        (response) => {
+             if(response.ok) {
+                    const dataPromise = response.json();
+                    dataPromise.then ( data => {
+                        console.log(data);
+                    }
+                  )
+            }
+            else {
+                console.log("Something went wrong - the server responded with",
+                    response.status, response.statusText);
+            }
+
+        }
+    )
+        .catch(
+            (error) => {
+                console.log("something went wrong", error);
+            }
+        );
+
+
+
+}

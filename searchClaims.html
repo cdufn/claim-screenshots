@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Allstate Small Claims Application</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header class="header">
+        <img src="allstatelogo.png" alt="Allstate Image Logo">
+
+    </header>
+    <section class="container">
+        <h1>Allstate Claims Search Page</h1>
+
+        <p>To search for exisiting Allstate Claims, please input the below required information</p>
+
+        <br>
+
+        <form id="claimFormSearch" action="database.html" method="POST">
+            <label for="claim_ID">Claim ID</label>
+            <input type="text" name="claimID" id="claimID">
+
+            <label for="policy_number">Customer Policy Number</label>
+            <input type="number" name="policy_number" id="policy_number">
+
+            <label for="last_name">Customer Surname</label>
+            <input type="text" name="last_name"" id="last_name"" required>
+            <form />
+
+            <br>
+
+            <div class="className="searchBox">
+                <label for="orderId">Order Id:</label>
+                <input id="orderId" type="text" />
+                <button>Search</button>
+            </div>"
+
+            <nav class="navigations">
+                <button onclick="searchClaims()" id="searchClaimsBtn">Search</button>
+            </nav>
+
+            <script scr="script.js"></script>
+
+            <h2>Claim Details</h2>
+
+            <table id="claimsTable">
+                <tr>
+                    <th>Claim ID</th>
+                    <th>Policy Number</th>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                    <th>Claim Type</th>
+                    <th>Claim Status</th>
+                    <th>View/Edit</th>
+                </tr>
+                <tr>
+                    <td>1234</td>
+                    <td>98563212</td>
+                    <td>John</td>
+                    <td>Doh</td>
+                    <td>Property</td>
+                    <td>New</td>
+                    <td><a href="View/Edit">View/Edit</a></td>
+                </tr>
+                <tr>
+                    <td>12345</td>
+                    <td>98573212</td>
+                    <td>Bob</td>
+                    <td>Jones</td>
+                    <td>Motor</td>
+                    <td>Accepted</td>
+                    <td><a href="View/Edit">View/Edit</a></td>
+                </tr>
+            </table>
+    </section>
+
+    <footer>
+        <a href="mailto:AllstateClaims@allstate.com">AllstateClaims@allstate.com</a>
+    </footer>
+
+</body>
+
+</html>

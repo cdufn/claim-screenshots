@@ -1,0 +1,26 @@
+[
+      {
+            "claim_id": 1,
+            "policy_number": 987563254,
+            "first_name": "John",
+            "last_name": "Doh",
+            "claim_type": "Property",
+            "claim_status": "New"
+      },
+      {
+            "claim_id": 2,
+            "policy_number": 987563255,
+            "first_name": "James",
+            "last_name": "Storey",
+            "claim_type": "Auto",
+            "claim_status": "New"
+      },
+      {
+            "claim_id": 3,
+            "policy_number": 987563256,
+            "first_name": "Paul",
+            "last_name": "Doherty",
+            "claim_type": "Pet",
+            "claim_status": "New"
+      }
+]
